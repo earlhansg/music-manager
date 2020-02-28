@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MusicManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
@@ -26,6 +25,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# music-manager
->>>>>>> cb97255948f86c39e8deda99486ec43cabfa7427
