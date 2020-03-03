@@ -28,9 +28,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles/main.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/", "src/assets/styles",
+                "node_modules"
+              ]
+            },
+            "scripts": [],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
