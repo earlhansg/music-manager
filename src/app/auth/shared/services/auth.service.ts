@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { tap } from 'rxjs/operators';
-import { Store } from '../../../store';
+import { Store } from '@app/store';
 
 export interface User {
   email: string;

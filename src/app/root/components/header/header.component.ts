@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
-import { User } from '../../../auth/shared/services/auth.service';
+import { User } from '@app/auth/shared/services/auth.service';
 
 
 @Component({

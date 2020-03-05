@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import { Observable, Subscription } from 'rxjs';
 
-import { AuthService, User } from '../../auth/shared/services/auth.service';
-import { Store } from '../../store';
+import { AuthService, User } from '@app/auth/shared/services/auth.service';
+import { Store } from '@app/store';
 
 
 @Component({
