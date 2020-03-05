@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AuthModule } from './auth/auth.module';
+import { MusicModule } from './music/music.module';
 
 import { AppComponent } from './root/container/app.component';
 import { HeaderComponent } from './root/components/header/header.component';
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    MusicModule
   ],
   providers: [
     Store
