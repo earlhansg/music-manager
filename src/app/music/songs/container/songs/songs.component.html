@@ -1,1 +1,32 @@
-<h1>Songs</h1>
+<div class="songs">
+    <div class="songs__title">
+      <h1>
+        <img src="/assets/images/food.svg">
+        Your songs
+      </h1>
+      <a
+        class="btn__add"
+        [routerLink]="['../songs/new']">
+        <img src="/assets/images/add-white.svg">
+        New song
+      </a>
+    </div>
+    <div *ngIf="songs$ | async as songs; else loading;">
+      <div class="message" *ngIf="!songs.length">
+        <img src="/assets/images/face.svg">
+        No songs, add a new song to start
+      </div>
+  
+      <app-list-item *ngFor="let song of songs"
+                     [item]="song"
+                     (remove)="removeSong($event)">
+      </app-list-item>
+      <!-- songs ngFor -->
+    </div>
+    <ng-template #loading>
+      <div class="message">
+        <img src="/assets/images/loading.svg">
+        Fetching songs...
+      </div>
+    </ng-template>
+</div>
