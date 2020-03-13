@@ -36,6 +36,11 @@ export class AuthService {
   constructor(private af: AngularFireAuth,
               private store: Store) {}
 
+              
+  get user() {
+    return this.af.auth.currentUser;
+  }
+
   get authState() {
     return this.af.authState;
   }
