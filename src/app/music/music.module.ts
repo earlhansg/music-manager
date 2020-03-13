@@ -7,7 +7,7 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   imports: [
     MusicRoutingModule,
-    SharedModule
+    SharedModule.forRoot()
   ]
 })
 export class MusicModule {}
