@@ -41,11 +41,11 @@ export class SongsService {
     // tslint:disable-next-line:curly
     if (!key) return of({});
 
-    // return this.store.select<Song[]>('songs')
-    //   .pipe(
-    //     filter(Boolean),
-    //     map(songs => songs.find((song: Song) => song.key === key))
-    // );
+    return this.store.select<Song[]>('songs')
+      .pipe(
+        filter(Boolean),
+        map((songs: any ) => songs.find((song: Song) => song.key === key))
+    );
   }
 
   addSong(song: Song) {
