@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { Observable, Subscription } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { Song, SongsService } from '@app/music/shared/services/songs.service';
 
@@ -23,11 +24,14 @@ export class SongComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.songsService.songs$.subscribe();
+    // this.song$ = this.route.params
+    //   .pipe(switchMap(param => this.songsService.getSong(param.id)));
   }
 
 
-  addSong(event: Song) {
-    console.log('Song', event);
+  async addSong(event: Song) {
+    await this.songsService.addSong(event);
+    this.backToSongs();
   }
 
   async updateSong(event: Song) {
