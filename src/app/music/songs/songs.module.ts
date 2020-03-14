@@ -7,6 +7,7 @@ import { SharedModule } from '@app/music/shared/shared.module';
 
 import { SongsComponent } from './container/songs/songs.component';
 import { SongComponent } from './container/song/song.component';
+import { SongFormComponent } from './components/song-form/song-form.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SongComponent } from './container/song/song.component';
   ],
   declarations: [
     SongsComponent,
-    SongComponent
+    SongComponent,
+    SongFormComponent
   ]
 })
 export class SongsModule {}
