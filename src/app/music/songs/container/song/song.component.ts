@@ -22,12 +22,12 @@ export class SongComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.subscription = this.songsService.songs$.subscribe();
+    this.subscription = this.songsService.songs$.subscribe();
   }
 
 
-  async addSong(event: Song) {
-    this.backToSongs();
+  addSong(event: Song) {
+    console.log('Song', event);
   }
 
   async updateSong(event: Song) {

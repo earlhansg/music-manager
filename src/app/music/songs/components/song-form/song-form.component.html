@@ -1,1 +1,61 @@
-<h1>Song Form</h1>
+<div class="song-form">
+
+    <form [formGroup]="form">
+      <div class="song-form__name">
+        <label>
+          <h3>Song name</h3>
+  
+          <input
+            type="text"
+            placeholder="e.g. Bohemian Raphsody"
+            formControlName="name">
+  
+          <div class="error" *ngIf="required">
+            Song name is required
+          </div>
+        </label>
+      </div>
+  
+      <div class="song-form__food">
+        <div class="song-form__subtitle">
+          <h3>Artist</h3>
+  
+          <button
+            type="button"
+            class="song-form__add"
+            (click)="addArtist()">
+            <img src="assets/images/add-white.svg">
+            Add artist
+          </button>
+        </div>
+  
+        <div formArrayName="artist">
+          <label *ngFor="let c of artist.controls; index as i;">
+            <input [formControlName]="i" placeholder="e.g. Eggs">
+  
+            <span
+              class="song-form__remove"
+              (click)="removeArtist(i)">
+                </span>
+          </label>
+        </div>
+      </div>
+  
+      <div class="song-form__submit">
+        <div>
+          <button
+            type="button"
+            class="button"
+            (click)="createSong()">
+            Create song
+          </button>
+          <a
+            class="button button--cancel"
+            [routerLink]="['../']">
+            Cancel
+          </a>
+        </div>
+      </div>  
+    </form>
+  
+  </div>

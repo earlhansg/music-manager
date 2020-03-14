@@ -3,31 +3,11 @@
     <div class="song__title">
       <h1>
         <img src="assets/images/food.svg">
-  
-        <span *ngIf="song$ | async as song; else title;">
-              {{ song.name ? 'Edit' : 'Create' }} song
-            </span>
-  
-        <ng-template #title>
-          Loading...
-        </ng-template>
+        <span>Create Song</span>
       </h1>
     </div>
   
-    <div *ngIf="song$ | async as song; else loading;">
-      <app-song-form
-        [song]="song"
-        (create)="addSong($event)"
-        (update)="updateSong($event)"
-        (remove)="removeSong($event)">
-      </app-song-form>
-    </div>
-  
-    <ng-template #loading>
-      <div class="message">
-        <img src="assets/images/loading.svg">
-        Fetching song...
-      </div>
-    </ng-template>
-  
+    <app-song-form
+      (create)="addSong($event)">
+    </app-song-form>
 </div>
