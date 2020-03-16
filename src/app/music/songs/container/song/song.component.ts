@@ -35,10 +35,15 @@ export class SongComponent implements OnInit {
   }
 
   async updateSong(event: Song) {
+    const key = this.route.snapshot.params.id;
+    await this.songsService.updateSong(key, event);
+    this.backToSongs();
   }
 
   async removeSong(event: Song) {
-
+    const key = this.route.snapshot.params.id;
+    await this.songsService.removeSong(key);
+    this.backToSongs();
   }
 
   backToSongs() {

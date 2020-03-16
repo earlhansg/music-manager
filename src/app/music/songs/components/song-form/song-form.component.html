@@ -7,7 +7,7 @@
   
           <input
             type="text"
-            placeholder="e.g. Bohemian Raphsody"
+            placeholder="e.g. English Bohemian Rhapsody"
             formControlName="name">
   
           <div class="error" *ngIf="required">
@@ -46,16 +46,51 @@
           <button
             type="button"
             class="button"
+            *ngIf="!exists"
             (click)="createSong()">
             Create song
           </button>
+  
+          <button
+            type="button"
+            class="button"
+            *ngIf="exists"
+            (click)="updateSong()">
+            Save
+          </button>
+  
           <a
             class="button button--cancel"
             [routerLink]="['../']">
             Cancel
           </a>
         </div>
-      </div>  
+  
+        <div class="song-form__delete" *ngIf="exists">
+          <div *ngIf="toggled">
+            <p>Delete item?</p>
+  
+            <button
+              class="confirm"
+              type="button"
+              (click)="removeSong()">
+              Yes
+            </button>
+  
+            <button
+              class="cancel"
+              type="button"
+              (click)="toggle()">
+              No
+            </button>
+          </div>
+  
+          <button class="button button--delete" type="button" (click)="toggle()">
+            Delete
+          </button>
+        </div>
+      </div>
+  
     </form>
   
   </div>
