@@ -24,8 +24,8 @@ export class SongComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.songsService.songs$.subscribe();
-    // this.song$ = this.route.params
-    //   .pipe(switchMap(param => this.songsService.getSong(param.id)));
+    this.song$ = this.route.params
+      .pipe(switchMap(param => this.songsService.getSong(param.id)));
   }
 
 

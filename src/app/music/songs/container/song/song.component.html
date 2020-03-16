@@ -3,7 +3,13 @@
     <div class="song__title">
       <h1>
         <img src="assets/images/food.svg">
-        <span>Create Song</span>
+        <span *ngIf="song$ | async as song; else title">
+          {{ song.name ? 'Edit': 'Create'}} Song
+        </span>
+
+        <ng-template #title>
+          Loading...
+        </ng-template>
       </h1>
     </div>
   
