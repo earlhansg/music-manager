@@ -1,20 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
-
-import { Song } from '@app/music/shared/services/songs.service';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.scss']
 })
-export class ListItemComponent implements OnInit {
+export class ListItemComponent {
     
   toggled = false;
 
   @Input()
   item: any;
 
+  @Output()
+  remove = new EventEmitter<any>();
+
   constructor() {}
 
-  ngOnInit() {}
+  toggle() {
+    this.toggled = !this.toggled;
+  }
+  removeItem() {
+    this.remove.emit(this.item);
+  }
+  getRoute(item: any) {
+    return [`../songs`, item.key];
+  }
+
 }

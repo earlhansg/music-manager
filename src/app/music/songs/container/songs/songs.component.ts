@@ -27,4 +27,9 @@ export class SongsComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  removeSong(event: Song) {
+    // Remove song
+    this.songsService.removeSong(event.key);
+  }
+
 }
