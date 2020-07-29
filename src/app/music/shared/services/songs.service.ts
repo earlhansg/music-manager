@@ -12,6 +12,8 @@ import { AuthService } from '@app/auth/shared/services/auth.service';
 export interface Song {
   name: string;
   artist: string[];
+  playlist: boolean;
+  favorite: boolean;
   timestamp: number;
   key: string;
   $exists: () => boolean;

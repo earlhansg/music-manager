@@ -5,12 +5,13 @@ import { RouterModule } from '@angular/router';
 import { SongsService } from './services/songs.service';
 
 import { ListItemComponent } from './components/list-item/list-item.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule
   ],
   declarations: [ListItemComponent],
   exports: [ListItemComponent]

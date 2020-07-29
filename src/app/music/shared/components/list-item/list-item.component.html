@@ -7,6 +7,18 @@
             </span>
         </p>
     </a>
+    <div class="list-item__icons">
+        <span class="headphone" 
+              [class.headphone-active]="item.playlist" 
+              (click)="updateItem(item, 'playlist')">
+            <fa-icon [icon]="faHeadphones"></fa-icon>
+        </span>
+        <span class="star" 
+              [class.star-active]="item.favorite"
+              (click)="updateItem(item, 'favorite')">
+            <fa-icon [icon]="faStar"></fa-icon>
+        </span>
+    </div>
     <div class="list-item__delete"
          *ngIf="toggled">
         <p>Delete item?</p>

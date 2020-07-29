@@ -25,6 +25,15 @@
         font-size: 14px;
       }
     }
+    &__icons {
+      width: 15%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      span {
+        cursor: pointer;
+      }
+    }
     a {
       display: flex;
       flex-grow: 1;
@@ -69,4 +78,18 @@
     &:hover {
       background-color: darken(#f6fafd, 2%);
     }
+}
+
+.headphone-active {
+  fa-icon {
+    color: rgb(99, 51, 99);
+    transition: 0.3s all;
+  }
+}
+
+.star-active {
+  fa-icon {
+    color: rgb(233, 175, 29);
+    transition: 0.3s all;
+  }
 }

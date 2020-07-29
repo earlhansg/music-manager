@@ -28,7 +28,9 @@ export class SongFormComponent implements OnChanges {
 
   form = this.fb.group({
     name: ['', Validators.required],
-    artist: this.fb.array([''])
+    artist: this.fb.array(['']),
+    playlist: false,
+    favorite: false
   });
 
   constructor(private fb: FormBuilder) {}

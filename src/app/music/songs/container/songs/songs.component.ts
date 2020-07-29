@@ -32,4 +32,9 @@ export class SongsComponent implements OnInit, OnDestroy {
     this.songsService.removeSong(event.key);
   }
 
+  async updateSong(event: Song) {
+    // Update song 
+    await this.songsService.updateSong(event.key, event);
+  }
+
 }

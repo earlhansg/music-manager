@@ -6,7 +6,7 @@
         ".write": "$uid === auth.uid"
       }
     },
-    "music": {
+    "songs": {
       "$uid": {
         ".read": "$uid === auth.uid",
         ".write": "$uid === auth.uid",
