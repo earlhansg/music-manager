@@ -7,7 +7,8 @@
             </span>
         </p>
     </a>
-    <div class="list-item__icons">
+    <div class="list-item__icons"
+        *ngIf="displaySongs">
         <span class="headphone" 
               [class.headphone-active]="item.playlist" 
               (click)="updateItem(item, 'playlist')">
@@ -24,11 +25,11 @@
         <p>Delete item?</p>
         <button class="confirm"
                 type="button"
-                (click)="removeItem()"> Yes</button>
+                (click)="removeItem()">Yes</button>
 
         <button class="cancel"
                 type="button"
-                (click)="toggle()">No </button>
+                (click)="toggle()">No</button>
     </div>
     <button class="trash"
             type="button"

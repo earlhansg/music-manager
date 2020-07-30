@@ -19,6 +19,7 @@
   
       <app-list-item *ngFor="let song of songs"
                      [item]="song"
+                     [displaySongs]="true"
                      (update)="updateSong($event)"
                      (remove)="removeSong($event)">
       </app-list-item>

@@ -1,0 +1,28 @@
+<div class="playlist">
+    <div class="playlist__title">
+      <h1>
+        <fa-icon [icon]="faStar"></fa-icon>
+        Playlist
+      </h1>
+    </div>
+    <!-- end of .playlist__title  -->
+    <div *ngIf="playlist$ | async as playlist; else loading;">
+        <div class="message" *ngIf="!playlist.length">
+          <img src="/assets/images/face.svg">
+          No playlist, add a new song to start
+        </div>
+    
+        <app-list-item *ngFor="let list of playlist"
+                       [item]="list"
+                       [displaySongs]="false">
+        </app-list-item>
+    </div>
+    
+    <ng-template #loading>
+      <div class="message">
+        <img src="/assets/images/loading.svg">
+        Fetching playlist...
+      </div>
+    </ng-template>
+</div>
+<!-- end of .playlist  -->

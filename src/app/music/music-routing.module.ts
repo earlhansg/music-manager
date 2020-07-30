@@ -9,6 +9,11 @@ export const ROUTES: Routes = [
     path: 'songs',
     canActivate: [AuthGuard],
     loadChildren: './songs/songs.module#SongsModule'
+  },
+  {
+    path: 'playlist',
+    canActivate: [AuthGuard],
+    loadChildren: './playlist/playlist.module#PlaylistModule'
   }
 ];
 

@@ -20,6 +20,9 @@ export class ListItemComponent {
   @Input()
   item: Song;
 
+  @Input()
+  displaySongs: boolean;
+
   @Output()
   remove = new EventEmitter<any>();
 

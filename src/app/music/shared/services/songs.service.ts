@@ -50,6 +50,14 @@ export class SongsService {
     );
   }
 
+  getPlaylist() {
+    return this.store.select<Song[]>('songs')
+      .pipe(
+        filter(Boolean),
+        map((songs: any ) => songs.find((song: Song) => song.playlist))
+    );
+  }
+
   addSong(song: Song) {
     return this.db.list(`songs/${this.uid}`).push(song);
   }
