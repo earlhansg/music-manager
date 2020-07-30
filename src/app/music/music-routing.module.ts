@@ -14,6 +14,11 @@ export const ROUTES: Routes = [
     path: 'playlist',
     canActivate: [AuthGuard],
     loadChildren: './playlist/playlist.module#PlaylistModule'
+  },
+  {
+    path: 'favorites',
+    canActivate: [AuthGuard],
+    loadChildren: './favorites/favorites.module#FavoritesModule'
   }
 ];
 

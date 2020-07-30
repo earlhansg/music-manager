@@ -2,7 +2,7 @@
     display: block;
     margin: 50px 0;
   }
-  .playlist {
+  .favorites {
     position: relative;
     background: #fff;
     box-shadow: 0 3px 4px rgba(0,0,0,.1);
@@ -17,8 +17,8 @@
       padding: 0;
       font-size: 24px;
       fa-icon {
+        color: rgb(233, 175, 29);
         margin: 0 10px 0 0;
-        color: rgb(99, 51, 99);
       }
     }
     &__title {

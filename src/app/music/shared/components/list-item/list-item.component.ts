@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, 
   Input, Output, EventEmitter } from '@angular/core';
 
-import { faHeadphones, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faHeadphones, faStar, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 import { Song } from '../../services/songs.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class ListItemComponent {
 
   faHeadphones = faHeadphones;
   faStar = faStar;
+  faMinus = faMinusCircle;
     
   toggled = false;
 

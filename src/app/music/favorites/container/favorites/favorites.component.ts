@@ -3,31 +3,31 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@app/store';
 import { Song, SongsService } from '@app/music/shared/services/songs.service';
 // Icon 
-import { faHeadphones } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 // rxjs operators
 import { map } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-playlist',
-  templateUrl: './playlist.component.html',
-  styleUrls: ['./playlist.component.scss']
+  selector: 'app-favorites',
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.scss']
 })
-export class PlaylistComponent implements OnInit, OnDestroy {
+export class FavoritesComponent implements OnInit, OnDestroy {
 
-  playlist$: Observable<Song[]>;
+  favorites$: Observable<Song[]>;
   subscription: Subscription;
-  faHeadphones = faHeadphones;
+  faStar = faStar;
 
   constructor(private store: Store,
               private songsService: SongsService) {}
-
+  
   ngOnInit() {
-    this.playlist$ = this.store.select<Song[]>('songs')
+    this.favorites$ = this.store.select<Song[]>('songs')
       .pipe(
         map((songs) => {
           if(songs) {
-            return songs.filter((song: Song) => song.playlist);
+            return songs.filter((song: Song) => song.favorite);
           } else {
             return null;
           }
@@ -36,9 +36,9 @@ export class PlaylistComponent implements OnInit, OnDestroy {
   }
 
   async removeSong(event: Song) {
-    // Remove song from playlist
+    // Remove song from favorite
     await this.songsService.updateSong(event.key, 
-      Object.assign(event, { playlist: !event.playlist }));
+      Object.assign(event, { favorite: !event.favorite }));
   }
 
   ngOnDestroy() {

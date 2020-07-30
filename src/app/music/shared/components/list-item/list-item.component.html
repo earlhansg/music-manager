@@ -7,6 +7,7 @@
             </span>
         </p>
     </a>
+
     <div class="list-item__icons"
         *ngIf="displaySongs">
         <span class="headphone" 
@@ -20,9 +21,17 @@
             <fa-icon [icon]="faStar"></fa-icon>
         </span>
     </div>
+    <!-- end of .list-item__icons -->
     <div class="list-item__delete"
          *ngIf="toggled">
-        <p>Delete item?</p>
+
+         <ng-container *ngIf="displaySongs; else removeSongs">
+            <p>Delete item?</p>
+         </ng-container>
+         <ng-template #removeSongs>
+            <p>Remove song?</p>
+         </ng-template>
+
         <button class="confirm"
                 type="button"
                 (click)="removeItem()">Yes</button>
@@ -31,9 +40,21 @@
                 type="button"
                 (click)="toggle()">No</button>
     </div>
+    <!-- end of .list-item__delete  -->
     <button class="trash"
             type="button"
             (click)="toggle()">
-        <img src="assets/images/remove.svg">
+
+        <ng-container *ngIf="displaySongs; else remove">
+            <img src="assets/images/remove.svg">
+        </ng-container>
+        <ng-template #remove>
+            <span class="remove">
+                <fa-icon [icon]="faMinus" size="lg"></fa-icon>
+            </span>
+        </ng-template>
+
     </button>
+    <!-- end of .trash  -->
 </div>
+<!-- end of .list-item  -->
